@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import utilities.selenium.Driver_Factory;
 import utilities.shared_Component.SharedMethods;
 import utilities.test_data.Constant;
-
 public class LoginPage {
 
     protected WebDriver driver;
@@ -67,10 +66,9 @@ public class LoginPage {
     @Step ("Login As Admin")
     public void loginAsAdmin(){
         enterUserName(Constant.ADMIN_USERNAME);
-        enterPassword(Constant.ADMIN_PASSWORD);
+        enterPassword(Constant.Current_Password);
         clickOnLoginBtn();
     }
-
 
     @Step ("Login As TenantAdmin ")
     public void loginAsTenantAdmin(){
