@@ -9,34 +9,36 @@ public class Driver_Factory {
 
     private static WebDriver driver;
 
-    // Create Chrome driver ONLY
-    private static WebDriver chromeDriverConfig() {
+    // 🔹 Initialize Driver
+    public static void initDriver() {
 
-        WebDriverManager.chromedriver().setup();
+        if (driver == null) {
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
+            WebDriverManager.chromedriver().setup();
 
-        // If you need headless
-        // options.addArguments("--headless=new");
-
-        return new ChromeDriver(options);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized");
+            options.addArguments("--remote-allow-origins=*");
+            driver = new ChromeDriver(options);
+        }
     }
 
-    //  GET driver
+    // 🔹 Get Driver
     public static WebDriver getDriver() {
+
         if (driver == null) {
-            driver = chromeDriverConfig();
+            initDriver();  
         }
+
         return driver;
     }
 
-
-    // Quit driver properly
+    // 🔹 Quit Driver
     public static void quitDriver() {
+
         if (driver != null) {
             driver.quit();
-            driver = null;   // Allow fresh start for next test
+            driver = null;   
         }
     }
 }

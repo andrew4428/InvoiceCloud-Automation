@@ -1,9 +1,15 @@
 package utilities.shared_Component;
-
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import java.util.function.Function;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -11,7 +17,7 @@ import java.time.Duration;
 public class SharedMethods {
 
 
-    private static int TIMEOUT = 60;
+    private static int TIMEOUT = 120;
 
 
     public static WebElement waitForVisible(WebDriver driver, WebElement element) {
