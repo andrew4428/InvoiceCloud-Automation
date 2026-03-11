@@ -42,23 +42,23 @@ return wait.until(
     }
 
     private WebElement newPassword() {
-        return SharedMethods.waitForVisible(driver,
+        return SharedMethods.visibilityOfElementLocated(driver,
                 driver.findElement(By.id("NewPassword")));
     }
 
     private WebElement confirmPassword() {
-        return SharedMethods.waitForVisible(driver,
+        return SharedMethods.visibilityOfElementLocated(driver,
                 driver.findElement(By.xpath("//*[@id=\"ConfirmNewPassword\"]")));
     }
 
     private WebElement saveButton() {
-        return SharedMethods.waitForVisible(driver,
+        return SharedMethods.visibilityOfElementLocated(driver,
                 driver.findElement(By.cssSelector("button.save-button")));
     }
 
     //  Actions
      public void clickElement(WebElement element) {
-        SharedMethods.waitForVisible(driver, element);
+        SharedMethods.visibilityOfElementLocated(driver, element);
         element.click();
     }
     public void openChangePassword()throws InterruptedException {

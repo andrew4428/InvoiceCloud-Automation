@@ -6,8 +6,8 @@
     <test name="All Tests">
         <classes>
             <class name="test_cases.LoginTest"/>
-            <class name="test_cases.ChangePasswordTest"/>
             <class name="test_cases.LogoutTest"/>
+            <class name="test_cases.ChangePasswordTest"/>
         </classes>
     </test>
 

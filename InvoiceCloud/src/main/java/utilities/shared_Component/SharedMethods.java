@@ -20,8 +20,8 @@ public class SharedMethods {
     private static int TIMEOUT = 120;
 
 
-    public static WebElement waitForVisible(WebDriver driver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
+    public static WebElement visibilityOfElementLocated (WebDriver driver, WebElement element) {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 

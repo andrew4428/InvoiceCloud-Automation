@@ -22,7 +22,7 @@ public class Logout {
 private WebElement Logo() {
         
         WebElement logo = driver.findElement(By.linkText("Invoice Cloud"));
-        return SharedMethods.waitForVisible(driver, logo);
+        return SharedMethods.visibilityOfElementLocated(driver, logo);
     }
     private WebElement headerDropdown() {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#page-loader > div")));
@@ -32,20 +32,20 @@ private WebElement Logo() {
 
     private WebElement logoutButton() {
         WebElement logout = driver.findElement(By.cssSelector("a.logout"));
-        return SharedMethods.waitForVisible(driver, logout);
+        return SharedMethods.visibilityOfElementLocated(driver, logout);
     }
     private WebElement logoutPopup() {
     WebElement popup = driver.findElement(By.cssSelector("div.logout-popup"));   
-    return SharedMethods.waitForVisible(driver, popup);}
+    return SharedMethods.visibilityOfElementLocated(driver, popup);}
 
  
     private WebElement confirmLogoutButton() {
     WebElement confirm = driver.findElement(By.cssSelector("button.swal-button--confirm"));
-    return SharedMethods.waitForVisible(driver, confirm);}
+    return SharedMethods.visibilityOfElementLocated(driver, confirm);}
 
 // Actions
   public void clickElement(WebElement element) {
-        SharedMethods.waitForVisible(driver, element);
+        SharedMethods.visibilityOfElementLocated(driver, element);
         element.click();
     }
 
